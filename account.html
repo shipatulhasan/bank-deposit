@@ -35,11 +35,11 @@
 </head>
 
 <body class="bg-white">
-    <main class="container mx-auto ">
+    <main class="container mx-auto p-5">
       <section class="py-20">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-red-300 to-red-500">
-            <h2 class="text-xl text-slate-100 font-bold mb-2">
+            <h2 class="text-2xl text-slate-100 font-bold mb-2">
               Deposit
             </h2>
             <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
@@ -47,7 +47,7 @@
             </h2>
           </div>
           <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-cyan-300 to-cyan-500">
-            <h2 class="text-xl text-slate-100 font-bold mb-2">
+            <h2 class="text-2xl text-slate-100 font-bold mb-2">
               Widthdraw
             </h2>
             <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
@@ -55,7 +55,7 @@
             </h2>
           </div>
           <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-violet-600 to-violet-900">
-            <h2 class="text-xl text-slate-100 font-bold mb-2">
+            <h2 class="text-2xl text-slate-100 font-bold mb-2">
               Total Ammount
             </h2>
             <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
@@ -66,8 +66,8 @@
       </section>
       <section class="pb-20 grid md:grid-cols-2 gap-10">
         <div class="card shadow-2xl rounded py-12 px-0  z-10 bg-white border-2 border-violet-700">
-          <h2 class="font-poppins text-xl md:text-4xl text-center text-violet-900 font-extrabold">
-            Deposit
+          <h2 class="font-poppins text-xl md:text-4xl text-center text-violet-800 font-extrabold">
+            Make a Deposit
           </h2>
           <form class="mt-5">
             <div class="py-2 text-center space-y-4">
@@ -88,8 +88,8 @@
           <form class="mt-5">
             <div class="py-2 text-center space-y-4">
               <input id="widthdraw-filed"
-                class="bg-transparent placeholder-slate-300 placeholder-opacity-80 w-4/6 text-black  py-1 px-2 focus:outline-none border-2 border-white rounded ring-inset "
-                type="text" placeholder="jhondoe@gmail.com" >
+                class="bg-transparent placeholder-slate-300 placeholder-opacity-80 w-4/6 text-white  py-1 px-2 focus:outline-none border-2 border-white rounded ring-inset "
+                type="text" placeholder="enter your ammount to widthdraw" >
               <input id="btn-widthdraw"
                 class="w-4/6 mx-auto bg-white  hover:cursor-pointer hover:bg-violet-800 hover:text-gray-200 transform duration-300 ring-2 ring-white font-bold  text-gray-600 py-1 px-4 rounded tracking-wider"
                 type="submit" value="Widthdraw Ammount">
@@ -105,7 +105,8 @@
       </p>
     </footer>
 
-  <script src="./scripts/account.js"></script>
+  <script src="./scripts/deposit.js"></script>
+  <script src="./scripts/widthdraw.js"></script>
 </body>
 
 </html>
