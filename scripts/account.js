@@ -19,7 +19,7 @@ document.getElementById('btn-deposit').addEventListener('click',function(event){
     const totalAmountElement =document.getElementById('totalAmmount')
     const previousTotalAmmountString = totalAmountElement.innerText
     const previousTotalAmmount = parseFloat(previousTotalAmmountString)
-    const newTotalAmmount = previousTotalAmmount + currentDepositAmmount
+    const newTotalAmmount = previousTotalAmmount + newDepositAmmount
 
     totalAmountElement.innerText = newTotalAmmount
     
