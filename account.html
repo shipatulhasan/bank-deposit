@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List your today's task</title>
+  <!-- fontawsome cdn -->
+  <script src="https://kit.fontawesome.com/59949b2abf.js" crossorigin="anonymous"></script>
+  <!-- Tailwind connection -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          backgroundImage: {
+        'body': "url('./img/background.jpg')",
+        
+      },
+      fontFamily:{
+          'poppins':[ 'Poppins', 'sans-serif']
+      }
+          
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+    </style>
+</head>
+
+<body class="bg-white">
+    <main class="container mx-auto ">
+      <section class="py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-red-300 to-red-500">
+            <h2 class="text-xl text-slate-100 font-bold mb-2">
+              Deposit
+            </h2>
+            <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
+              $<span id="deposit">00</span>
+            </h2>
+          </div>
+          <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-cyan-300 to-cyan-500">
+            <h2 class="text-xl text-slate-100 font-bold mb-2">
+              Widthdraw
+            </h2>
+            <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
+              $<span id="widthdraw">00</span>
+            </h2>
+          </div>
+          <div class=" shadow-2xl rounded p-8 bg-gradient-to-b from-violet-600 to-violet-900">
+            <h2 class="text-xl text-slate-100 font-bold mb-2">
+              Total Ammount
+            </h2>
+            <h2 class="text-5xl md:text-6xl text-slate-100 font-bold mb-2">
+              $<span id="totalAmmount">1200</span>
+            </h2>
+          </div>
+          
+      </section>
+      <section class="pb-20 grid md:grid-cols-2 gap-10">
+        <div class="card shadow-2xl rounded py-12 px-0  z-10 bg-white border-2 border-violet-700">
+          <h2 class="font-poppins text-xl md:text-4xl text-center text-violet-900 font-extrabold">
+            Deposit
+          </h2>
+          <form class="mt-5">
+            <div class="py-2 text-center space-y-4">
+              <input id="deposit-field"
+                class="bg-transparent w-4/6 text-black  py-1 px-2 focus:outline-none border-2 border-violet-900 rounded ring-inset "
+                type="text" placeholder="enter your ammount to deposit" >
+              <input id="btn-deposit"
+                class="w-4/6 mx-auto bg-violet-700 border-2 border-violet-700 hover:cursor-pointer hover:bg-white hover:text-slate-700 transform duration-300 font-bold text-slate-100 py-1 px-4 tracking-wider rounded"
+                type="submit" value="Deposit ammount">
+            </div>
+          </form>
+          
+        </div>
+        <div class="card shadow-2xl rounded py-12 px-0  z-10 bg-gradient-to-b from-violet-600 to-violet-900">
+          <h2 class="font-poppins text-xl md:text-4xl text-center text-white font-extrabold">
+            Widthdraw
+          </h2>
+          <form class="mt-5">
+            <div class="py-2 text-center space-y-4">
+              <input id="widthdraw-filed"
+                class="bg-transparent placeholder-slate-300 placeholder-opacity-80 w-4/6 text-black  py-1 px-2 focus:outline-none border-2 border-white rounded ring-inset "
+                type="text" placeholder="jhondoe@gmail.com" >
+              <input id="btn-widthdraw"
+                class="w-4/6 mx-auto bg-white  hover:cursor-pointer hover:bg-violet-800 hover:text-gray-200 transform duration-300 ring-2 ring-white font-bold  text-gray-600 py-1 px-4 rounded tracking-wider"
+                type="submit" value="Widthdraw Ammount">
+            </div>
+          </form>
+          
+        </div>
+      </section>
+    </main>
+    <footer class="w-full bg-gradient-to-b from-violet-600 to-violet-900 py-6 row-auto">
+      <p class="text-sm font-semibold text-gray-200 text-center">
+        Presented by Md. Shipatul Hasan Shakib
+      </p>
+    </footer>
+
+  <script src="./scripts/account.js"></script>
+</body>
+
+</html>
