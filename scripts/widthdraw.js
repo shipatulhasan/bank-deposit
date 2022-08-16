@@ -6,17 +6,7 @@
  * 5 
  */
 
-    // get the innerText from html field
-
-    const widthdrawElement = document.getElementById('widthdraw')
-    const previousWidthdrawAmmount = Number(widthdrawElement.innerText)
-
-    // get totalAmmount from html 
-
-    const totalAmountElement =document.getElementById('totalAmmount')
-    const previousTotalAmmount = Number(totalAmountElement.innerText)
-
-document.getElementById('btn-widthdraw').addEventListener('click',function(event){
+document.getElementById('btn-widthdraw').addEventListener('click', function (event) {
     // geting value from widthdraw field
     event.preventDefault()
     const widthdrawField = document.getElementById('widthdraw-filed')
@@ -25,33 +15,39 @@ document.getElementById('btn-widthdraw').addEventListener('click',function(event
     widthdrawField.value = ''
 
     // Error handeling
-    if(newWidthDrawAmmount <= 0 || isNaN(newWidthDrawAmmount)){
+    if (newWidthDrawAmmount <= 0 || isNaN(newWidthDrawAmmount)) {
         alert('please provide a valid input')
         return
     }
 
-    if(previousTotalAmmount < newWidthDrawAmmount){
-        alert('You don\'t have sufficient balance to widthdraw' )
-        return
-    }
+
+    // get the innerText from html field
+
+    const widthdrawElement = document.getElementById('widthdraw')
+    const previousWidthdrawAmmount = Number(widthdrawElement.innerText)
 
     // Calculate current widthdraw
 
     const currentWidthdrawAmmount = previousWidthdrawAmmount + newWidthDrawAmmount
 
+    // get totalAmmount from html 
+    const totalAmountText = document.getElementById('totalAmmount')
+    const prevTotalAmmount = Number(totalAmountText.innerText)
+
+    if (prevTotalAmmount < newWidthDrawAmmount) {
+        alert('You don\'t have sufficient balance to widthdraw')
+        return
+    }
+
     // Display currentwidthdraw
     widthdrawElement.innerText = currentWidthdrawAmmount
 
-
-    
     // total ammount calculation and display
 
 
-    const newTotalAmmount = previousTotalAmmount - newWidthDrawAmmount
-    totalAmountElement.innerText = newTotalAmmount
+    const newTotalAmmount = prevTotalAmmount - newWidthDrawAmmount
+    totalAmountText.innerText = newTotalAmmount
 
-    // Error handeling
-    
-    
+
 
 })

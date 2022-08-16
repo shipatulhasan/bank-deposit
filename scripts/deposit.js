@@ -1,16 +1,4 @@
-
-
-// deposit ammout in html
-const depositElement = document.getElementById('deposit')
-const previousDepositAmmountString = depositElement.innerText
-const previousDepositAmmount = parseFloat(previousDepositAmmountString)
-
-// get total ammount from html field and convert into number
-const totalAmountElement = document.getElementById('totalAmmount')
-const previousTotalAmmountString = totalAmountElement.innerText
-const previousTotalAmmount = parseFloat(previousTotalAmmountString)
-
-document.getElementById('btn-deposit').addEventListener('click',function(event){
+    document.getElementById('btn-deposit').addEventListener('click',function(event){
     event.preventDefault()
     const depositeField= document.getElementById('deposit-field')
     const newDepositAmmountString= depositeField.value
@@ -27,13 +15,21 @@ document.getElementById('btn-deposit').addEventListener('click',function(event){
         return
     }
 
+    // deposit ammout in html
+    const depositElement = document.getElementById('deposit')
+    const previousDepositAmmountString = depositElement.innerText
+    const previousDepositAmmount = parseFloat(previousDepositAmmountString)
+
     // deposit ammount push
 
     const currentDepositAmmount = newDepositAmmount + previousDepositAmmount
     depositElement.innerText = currentDepositAmmount
 
     // total ammount 
-
+    // get total ammount from html field and convert into number
+    const totalAmountElement = document.getElementById('totalAmmount')
+    const previousTotalAmmountString = totalAmountElement.innerText
+    const previousTotalAmmount = parseFloat(previousTotalAmmountString)
     
     const newTotalAmmount = previousTotalAmmount + newDepositAmmount
 
