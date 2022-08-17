@@ -1,44 +1,32 @@
-    document.getElementById('btn-deposit').addEventListener('click',function(event){
-    event.preventDefault()
-    const depositeField= document.getElementById('deposit-field')
-    const newDepositAmmountString= depositeField.value
-    const newDepositAmmount = parseFloat(newDepositAmmountString)
+    document.getElementById('btn-deposit').addEventListener('click', function (event) {
+        event.preventDefault()
+        // Geting new deposit ammount from input by calling a function
+        const newDepositAmmount = getInputValue('deposit-field')
 
-    // clear input field
+        // Erorr handeling
 
-    depositeField.value = ''
+        if (isNaN(newDepositAmmount) || (newDepositAmmount <= 0)) {
+            alert('please inter a valid number')
+            return
+        }
 
-    // Erorr handeling
+        // deposit ammout in html
+        const previousDepositAmmount = getDisplayElement('deposit')
 
-    if(isNaN(newDepositAmmount) || (newDepositAmmount <= 0)){
-        alert('please inter a valid number')
-        return
-    }
+        // deposit ammount push
 
-    // deposit ammout in html
-    const depositElement = document.getElementById('deposit')
-    const previousDepositAmmountString = depositElement.innerText
-    const previousDepositAmmount = parseFloat(previousDepositAmmountString)
+        const currentDepositAmmount = newDepositAmmount + previousDepositAmmount
 
-    // deposit ammount push
+        // set new ammount in display
+        displayNewAmmount('deposit', currentDepositAmmount)
 
-    const currentDepositAmmount = newDepositAmmount + previousDepositAmmount
-    depositElement.innerText = currentDepositAmmount
+        // total ammount 
+        // get total ammount from html field and convert into number
 
-    // total ammount 
-    // get total ammount from html field and convert into number
-    const totalAmountElement = document.getElementById('totalAmmount')
-    const previousTotalAmmountString = totalAmountElement.innerText
-    const previousTotalAmmount = parseFloat(previousTotalAmmountString)
-    
-    const newTotalAmmount = previousTotalAmmount + newDepositAmmount
+        const previousTotalAmmount = getDisplayElement('totalAmmount')
 
-    totalAmountElement.innerText = newTotalAmmount
-    
-    
-   
+        const newTotalAmmount = previousTotalAmmount + newDepositAmmount
 
+        displayNewAmmount('totalAmmount', newTotalAmmount)
 
-    
-
-})
+    })

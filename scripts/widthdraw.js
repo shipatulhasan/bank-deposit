@@ -9,12 +9,10 @@
 document.getElementById('btn-widthdraw').addEventListener('click', function (event) {
     // geting value from widthdraw field
     event.preventDefault()
-    const widthdrawField = document.getElementById('widthdraw-filed')
-    const newWidthDrawAmmount = Number(widthdrawField.value)
-
-    widthdrawField.value = ''
+    const newWidthDrawAmmount = getInputValue('widthdraw-field')
 
     // Error handeling
+
     if (newWidthDrawAmmount <= 0 || isNaN(newWidthDrawAmmount)) {
         alert('please provide a valid input')
         return
@@ -23,16 +21,15 @@ document.getElementById('btn-widthdraw').addEventListener('click', function (eve
 
     // get the innerText from html field
 
-    const widthdrawElement = document.getElementById('widthdraw')
-    const previousWidthdrawAmmount = Number(widthdrawElement.innerText)
+    const previousWidthdrawAmmount = getDisplayElement('widthdraw')
 
     // Calculate current widthdraw
 
     const currentWidthdrawAmmount = previousWidthdrawAmmount + newWidthDrawAmmount
 
     // get totalAmmount from html 
-    const totalAmountText = document.getElementById('totalAmmount')
-    const prevTotalAmmount = Number(totalAmountText.innerText)
+
+    const prevTotalAmmount = getDisplayElement('totalAmmount')
 
     if (prevTotalAmmount < newWidthDrawAmmount) {
         alert('You don\'t have sufficient balance to widthdraw')
@@ -40,14 +37,14 @@ document.getElementById('btn-widthdraw').addEventListener('click', function (eve
     }
 
     // Display currentwidthdraw
-    widthdrawElement.innerText = currentWidthdrawAmmount
+
+    displayNewAmmount('widthdraw', currentWidthdrawAmmount)
 
     // total ammount calculation and display
 
 
     const newTotalAmmount = prevTotalAmmount - newWidthDrawAmmount
-    totalAmountText.innerText = newTotalAmmount
 
-
+    displayNewAmmount('totalAmmount', newTotalAmmount)
 
 })
