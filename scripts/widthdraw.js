@@ -36,15 +36,35 @@ document.getElementById('btn-widthdraw').addEventListener('click', function (eve
         return
     }
 
-    // Display currentwidthdraw
+    // set widthdraw in localStorege
 
-    displayNewAmmount('widthdraw', currentWidthdrawAmmount)
+    localStorage.setItem('widthdraw-amount',currentWidthdrawAmmount)
+    
 
     // total ammount calculation and display
 
 
     const newTotalAmmount = prevTotalAmmount - newWidthDrawAmmount
 
-    displayNewAmmount('totalAmmount', newTotalAmmount)
+    localStorage.setItem('total-amount',newTotalAmmount)
+
+
+    displayWidthdraw()
 
 })
+
+
+const displayWidthdraw = () =>{
+
+    const widthdrawAmount = localStorage.getItem('widthdraw-amount')
+    const total = localStorage.getItem('total-amount')
+    if(widthdrawAmount){
+        displayNewAmmount('widthdraw', widthdrawAmount)
+    }
+
+    if(total){
+        displayNewAmmount('totalAmmount', total)
+    }
+}
+
+displayWidthdraw()
