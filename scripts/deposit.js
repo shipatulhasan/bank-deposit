@@ -18,15 +18,38 @@
         const currentDepositAmmount = newDepositAmmount + previousDepositAmmount
 
         // set new ammount in display
-        displayNewAmmount('deposit', currentDepositAmmount)
+
+        
+        localStorage.setItem('deposit-amount',currentDepositAmmount)
+
 
         // total ammount 
-        // get total ammount from html field and convert into number
 
         const previousTotalAmmount = getDisplayElement('totalAmmount')
 
         const newTotalAmmount = previousTotalAmmount + newDepositAmmount
 
-        displayNewAmmount('totalAmmount', newTotalAmmount)
+        localStorage.setItem('total-amount',newTotalAmmount)
+
+        
+
+        displayDeposit()
 
     })
+
+
+    const displayDeposit =()=>{
+        
+        const deposit = localStorage.getItem('deposit-amount')
+        const total = localStorage.getItem('total-amount')
+
+        if(deposit){
+            displayNewAmmount('deposit', deposit)
+        }
+        if(total){
+            displayNewAmmount('totalAmmount', total)
+        }
+
+
+    }
+    displayDeposit()
