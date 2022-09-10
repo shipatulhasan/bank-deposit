@@ -19,3 +19,12 @@ function displayNewAmmount(elementId, newAmmount){
     const displayBox = document.getElementById(elementId)
     displayBox.innerText = newAmmount
 }
+
+
+const reset = ()=>{
+    localStorage.clear()
+    displayNewAmmount('totalAmmount', '00')
+    displayNewAmmount('widthdraw', '00')
+    displayNewAmmount('deposit', '00')
+
+}
